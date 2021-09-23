@@ -1,0 +1,56 @@
+spring:    
+  application:
+    name: api-gateway
+  cloud:
+    gateway:
+      routes:
+      - id: productsModule
+        uri: ${DISCOVERY_URL:http://localhost:8011}
+        predicates:
+          - Path=/api/v1/**
+        filters:
+          - RewritePath=/api/v1(?<segment>/?.*), $\{segment}
+          - AddRequestHeader=X-Request-AppId, 238732
+          - RemoveRequestHeader=user-agent
+          - AddResponseHeader=X-Response-AppId, 238733
+          - AddRequestHeader=first-request, first-request-header
+          - AddResponseHeader=first-response, first-response-header
+
+
+server:
+  port: 8010    #port number
+
+hystrix:
+  command:
+    fallbackcmd:
+      execution:
+        isolation:
+          thread:
+            timeoutInMilliseconds: 2000
+ 
+eureka:
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka-config/eureka
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+ 
+   
+     
+management:
+#  security:
+#    enabled: false 
+  endpoints:
+    web:
+      exposure:
+        include: "*" #hystrix.stream
+ 
+ 
+logging:
+  level:
+    com.company.api_gateway: DEBUG

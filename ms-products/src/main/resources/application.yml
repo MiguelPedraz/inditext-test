@@ -1,0 +1,35 @@
+server:
+  port: ${PORT:8011}  
+ 
+eureka:         
+  instance:
+    leaseRenewalIntervalInSeconds: 5
+    leaseExpirationDurationInSeconds: 2
+#    statusPageUrlPath: ${server.servlet.context-path}/info
+#    healthCheckUrlPath: ${server.servlet.context-path}/health
+  client:
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8761}/eureka-config/eureka
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+    fetch-registry: true
+ 
+spring:    
+  application:
+    name: products-microservice 
+
+     
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  security:
+    enabled: false  
+
+ 
+logging:
+  level:
+    com.company.ms_products: DEBUG
