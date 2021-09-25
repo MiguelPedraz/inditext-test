@@ -1,6 +1,21 @@
 server:
-  port: ${PORT:8011}  
- 
+  port: ${PORT:8011} 
+
+spring:    
+  application:
+    name: products-microservice 
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:inditexdb
+    driverClassName: org.h2.Driver
+    username: sa
+    password: 1234
+    data: classpath:/SQL/price_schema.sql, classpath:/SQL/price_data.sql
+
 eureka:         
   instance:
     leaseRenewalIntervalInSeconds: 5
@@ -15,11 +30,6 @@ eureka:
     lease:
       duration: 5
     fetch-registry: true
- 
-spring:    
-  application:
-    name: products-microservice 
-
      
 management:
   endpoints:
