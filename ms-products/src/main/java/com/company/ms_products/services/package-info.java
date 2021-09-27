@@ -1,6 +1,6 @@
 package com.company.ms_products.services;
 
 /**
- * @author Miguel Pedraz Hernández
+ * @author Miguel Pedraz Hernandez
  *
  */

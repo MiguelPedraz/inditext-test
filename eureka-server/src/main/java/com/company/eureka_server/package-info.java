@@ -1,4 +1,4 @@
-package com.company.ms_products.entities;
+package com.company.eureka_server;
 
 /**
  * @author Miguel Pedraz Hernandez

@@ -1,20 +1,11 @@
-server:
-  port: ${PORT:8011} 
-
 spring:    
   application:
     name: products-microservice 
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
-  h2:
-    console:
-      enabled: true
-  datasource:
-    url: jdbc:h2:mem:inditexdb
-    driverClassName: org.h2.Driver
-    username: sa
-    password: 1234
-    data: classpath:/SQL/price_schema.sql, classpath:/SQL/price_data.sql
+  jackson:
+    serialization:
+      INDENT_OUTPUT: true
+  profiles:
+    active: 'dev'
 
 eureka:         
   instance:
@@ -39,7 +30,59 @@ management:
   security:
     enabled: false  
 
- 
+---
+#Developtment profile
+server:
+  email: #not defined
+  cluster: #not defined
+  port: ${PORT:8011} 
+
+spring:
+  profiles: dev
+  jpa:
+    properties:
+      hibernate:
+        show-sql: true
+        format_sql: true
+        use_sql_comments: true
+        order_inserts: true
+    database-platform: org.hibernate.dialect.H2Dialect
+    generate-ddl: false
+    open-in-view: false
+    repositories:
+      enabled: true
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:inditexdb #;INIT=CREATE SCHEMA IF NOT EXISTS INDITEX
+    driverClassName: org.h2.Driver
+    username: sa
+    password: 1234
+    data: classpath:/SQL/price_list_schema.sql, classpath:/SQL/price_list_data.sql
+  hikari: # to configure JDBC connection pool
+       connectionTimeout: 50000
+       idleTimeout: 300000
+       maxLifetime: 900000
+       maximumPoolSize: 8
+       minimumIdle: 8
+       poolName: MyPool
+       connectionTestQuery: select 1 
+
 logging:
   level:
     com.company.ms_products: DEBUG
+
+---
+#Production profile not used
+spring:
+  profiles: prod
+server:
+  email: #not defined
+  cluster: #not defined
+  port: #not defined
+
+logging:
+  level:
+    com.company.ms_products: ERROR
+
