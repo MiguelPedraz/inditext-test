@@ -47,7 +47,7 @@ public class PriceControllerImpl implements PriceController {
 	
 	@Override
 	@GetMapping
-	public ResponseEntity<Page<PriceDto>> getAllEmployees(
+	public ResponseEntity<Page<PriceDto>> getAllPrices(
 			@RequestParam(defaultValue = "0") Integer pageNo,
 			@RequestParam(defaultValue = "10") Integer pageSize, 
 			@RequestParam(defaultValue = "id") String sortBy) {
@@ -58,7 +58,7 @@ public class PriceControllerImpl implements PriceController {
 	
 	@Override
 	@GetMapping(value = "/date-productid-brandid")
-	public ResponseEntity<Page<PriceDateProductIdBrandIdDto>> getByDateIdProductIdBrand(
+	public ResponseEntity<Page<PriceDateProductIdBrandIdDto>> getPriceByDateIdProductIdBrand(
 			@RequestParam(defaultValue = "0") Integer pageNo,
 			@RequestParam(defaultValue = "10") Integer pageSize, 
 			@RequestParam(defaultValue = "id") String sortBy,
@@ -70,7 +70,7 @@ public class PriceControllerImpl implements PriceController {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-ddHH:mm:ss"); 
 		LocalDateTime date = LocalDateTime.parse(str, formatter);
 
-		Page<PriceDateProductIdBrandIdDto> pPriceDto = priceService.getByDateIdProductIdBrand(pageNo,
+		Page<PriceDateProductIdBrandIdDto> pPriceDto = priceService.getPriceByDateIdProductIdBrand(pageNo,
 				pageSize, sortBy, date, productId, brandId);
 		return new ResponseEntity<Page<PriceDateProductIdBrandIdDto> >(pPriceDto, HttpStatus.OK);
 	}

@@ -30,7 +30,7 @@ public interface PriceController {
 	 * 
 	 * @return ResponseEntity<List<PriceDto>> 
 	 */
-	ResponseEntity<Page<PriceDto>> getAllEmployees(Integer pageNo, Integer pageSize, String sortBy);
+	ResponseEntity<Page<PriceDto>> getAllPrices(Integer pageNo, Integer pageSize, String sortBy);
 
 	/**
 	 * @param pageNo    Page number
@@ -42,7 +42,7 @@ public interface PriceController {
 	 * 
 	 * @return ResponseEntity<Page<PriceDateProductIdBrandId>>
 	 */
-	ResponseEntity<Page<PriceDateProductIdBrandIdDto>> getByDateIdProductIdBrand(Integer pageNo, Integer pageSize,
+	ResponseEntity<Page<PriceDateProductIdBrandIdDto>> getPriceByDateIdProductIdBrand(Integer pageNo, Integer pageSize,
 			String sortBy, String strDate, Long productId, Long brandId);
 
 	/**

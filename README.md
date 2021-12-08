@@ -28,16 +28,26 @@ Ejecutar el ms-product
 
 ### 2.2 Endpoints
 
-- Todos los precios: http://localhost:8011/api/v1/prices
+- Todos los precios: http://localhost:8011/prices
 - El filtro que se pedia en el ejercicio:http://localhost:8011/prices/date-productid-brandid?date=2020-06-1621:00:00&productId=35455&brandId=1
 - Consola H2base http://localhost:8011/h2-console/login.jsp?jsessionid=1324092b351a89986f20325716efe636
-- Actuator http://localhost:8010/api/v1/actuator
+- Actuator http://localhost:8011/actuator
 
 ### 2.3 Notas
 
 1- Dara todo el rato error ya que esta buscando todo el rato el descubridor de servicios
 
-## 3. Implementar a futuro
+## 3. Eureka server
+
+### 2.1 Arrancar proyecto
+
+Ejecutar el eureka-server
+
+### 2.2 Endpoints
+
+- Eureka server http://localhost:8761/eureka-config/
+
+## 4. Implementar a futuro
 
 - Logs/monitorizacion
 - Exceptions

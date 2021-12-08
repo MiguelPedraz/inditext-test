@@ -74,7 +74,7 @@ public class PriceServiceTest {
 		Long productId = Long.valueOf(35455);
 		Long brandId = Long.valueOf(1);
 
-		Page<PriceDateProductIdBrandIdDto> priceServiceResult = service.getByDateIdProductIdBrand(pageNo, pageSize, sortBy,
+		Page<PriceDateProductIdBrandIdDto> priceServiceResult = service.getPriceByDateIdProductIdBrand(pageNo, pageSize, sortBy,
 				date, productId, brandId);
 
 		Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
@@ -101,7 +101,7 @@ public class PriceServiceTest {
 		Long productId = Long.valueOf(35455);
 		Long brandId = Long.valueOf(1);
 
-		Page<PriceDateProductIdBrandIdDto> priceServiceResult = service.getByDateIdProductIdBrand(pageNo, pageSize, sortBy,
+		Page<PriceDateProductIdBrandIdDto> priceServiceResult = service.getPriceByDateIdProductIdBrand(pageNo, pageSize, sortBy,
 				date, productId, brandId);
 
 		Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
@@ -128,7 +128,7 @@ public class PriceServiceTest {
 		Long productId = Long.valueOf(35455);
 		Long brandId = Long.valueOf(1);
 
-		Page<PriceDateProductIdBrandIdDto> priceServiceResult = service.getByDateIdProductIdBrand(pageNo, pageSize, sortBy,
+		Page<PriceDateProductIdBrandIdDto> priceServiceResult = service.getPriceByDateIdProductIdBrand(pageNo, pageSize, sortBy,
 				date, productId, brandId);
 
 		Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
@@ -155,7 +155,7 @@ public class PriceServiceTest {
 		Long productId = Long.valueOf(35455);
 		Long brandId = Long.valueOf(1);
 
-		Page<PriceDateProductIdBrandIdDto> priceServiceResult = service.getByDateIdProductIdBrand(pageNo, pageSize, sortBy,
+		Page<PriceDateProductIdBrandIdDto> priceServiceResult = service.getPriceByDateIdProductIdBrand(pageNo, pageSize, sortBy,
 				date, productId, brandId);
 
 		Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));
@@ -182,7 +182,7 @@ public class PriceServiceTest {
 		Long productId = Long.valueOf(35455);
 		Long brandId = Long.valueOf(1);
 
-		Page<PriceDateProductIdBrandIdDto> priceServiceResult = service.getByDateIdProductIdBrand(pageNo, pageSize, sortBy,
+		Page<PriceDateProductIdBrandIdDto> priceServiceResult = service.getPriceByDateIdProductIdBrand(pageNo, pageSize, sortBy,
 				date, productId, brandId);
 
 		Pageable paging = PageRequest.of(pageNo, pageSize, Sort.by(sortBy));

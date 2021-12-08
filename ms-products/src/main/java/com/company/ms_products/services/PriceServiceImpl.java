@@ -54,7 +54,7 @@ public class PriceServiceImpl implements PriceService {
 	
 	@Override
 	@Transactional(readOnly = true)
-	public Page<PriceDateProductIdBrandIdDto> getByDateIdProductIdBrand(Integer pageNo, 
+	public Page<PriceDateProductIdBrandIdDto> getPriceByDateIdProductIdBrand(Integer pageNo, 
 			Integer pageSize, String sortBy, LocalDateTime date, Long productId, 
 			Long brandId) {
 		

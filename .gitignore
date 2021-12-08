@@ -18,6 +18,7 @@
 **/logs/**
 **/.settings/**
 .metadata
+libs
 
 #Files
 *.jar

@@ -39,7 +39,8 @@ public interface PriceService {
 	 * 
 	 * @return Page<PriceDto> 
 	 */
-	Page<PriceDateProductIdBrandIdDto> getByDateIdProductIdBrand(Integer pageNo, Integer pageSize, String sortBy, LocalDateTime date,
+	Page<PriceDateProductIdBrandIdDto> getPriceByDateIdProductIdBrand(Integer pageNo, Integer pageSize, String sortBy, LocalDateTime date,
 			Long productId, Long barandId);
+
 
 }
